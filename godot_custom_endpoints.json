@@ -1,0 +1,83 @@
+{
+	"metaData": {
+		"version": "4.4"
+	},
+	"requests": [],
+	"notifications": [
+		{
+			"method": "gdscript_client/changeWorkspace",
+			"messageDirection": "serverToClient",
+			"params": {
+				"kind": "reference",
+				"name": "GodotChangeWorkspaceParams"
+			}
+		},
+		{
+			"method": "gdscript/capabilities",
+			"messageDirection": "serverToClient",
+			"params": {
+				"kind": "reference",
+				"name": "GodotCapabilities"
+			}
+		}
+	],
+	"structures": [
+        {
+			"name": "GodotChangeWorkspaceParams",
+			"properties": [
+                {
+                    "name": "path",
+                    "type": {
+                        "kind": "reference",
+                        "name": "Path"
+                    }
+                }
+            ]
+		},
+        {
+            "name": "GodotCapabilities",
+            "properties": [
+                {
+                    "name": "native_classes",
+                    "type": {
+                        "kind": "array",
+                        "element": {
+							"kind": "reference",
+							"name": "GodotNativeClassInfo"
+						}
+                    }
+                }
+            ]
+        },
+		{
+			"name": "GodotNativeClassInfo",
+			"properties": [
+                {
+                    "name": "name",
+                    "type": {
+                        "kind": "base",
+                        "name": "string"
+                    }
+                },
+                {
+                    "name": "inherits",
+                    "type": {
+                        "kind": "base",
+                        "name": "string"
+                    }
+                }
+            ]
+		}
+    ],
+	"enumerations": [],
+	"typeAliases": [
+        {
+			"name": "Path",
+			"type": {
+                "kind": "base",
+				"name": "string"
+			},
+			"documentation": "File system path that is not passed via DocumentUri."
+		}
+    ]
+}
